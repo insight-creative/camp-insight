@@ -23,7 +23,7 @@
       <div class="row">
         <div class="main-image col-md-12">
           <img class="img-responsive" src="img/postcard.jpg">
-          <div class="clock"></div>
+          <div id="countdown"></div>
         </div>
       </div>
       <h2>Camp Insight</h2>
@@ -40,16 +40,44 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.js"></script>
     <script src="js/flipclock.min.js"></script>
-    <script type="text/javascript">
-    var date  = new Date(Date.UTC(2014, 7, 14, 12, 0, 0));
-    var now   = new Date();
-    var diff  = date.getTime()/1000 - now.getTime()/1000;
+    <script>
 
-    var clock = $('.clock').FlipClock(diff, { // <-- DID YOU MEAN FlipClock
-        clockFace: 'DailyCounter',
-        countdown: true,
-        showSeconds: false
-    });
+        CountDownTimer('08/14/2014 10:1 AM', 'countdown');
+        CountDownTimer('02/20/2012 10:1 AM', 'newcountdown');
+
+        function CountDownTimer(dt, id)
+        {
+            var end = new Date(dt);
+
+            var _second = 1000;
+            var _minute = _second * 60;
+            var _hour = _minute * 60;
+            var _day = _hour * 24;
+            var timer;
+
+            function showRemaining() {
+                var now = new Date();
+                var distance = end - now;
+                if (distance < 0) {
+
+                    clearInterval(timer);
+                    document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                    return;
+                }
+                var days = Math.floor(distance / _day);
+                var hours = Math.floor((distance % _day) / _hour);
+                var minutes = Math.floor((distance % _hour) / _minute);
+                var seconds = Math.floor((distance % _minute) / _second);
+
+                document.getElementById(id).innerHTML = days + ' days';
+            }
+
+            timer = setInterval(showRemaining, 1000);
+        }
+
     </script>
+    <div id="countdown"></div>
+    <div id="newcountdown"></div>
   </body>
 </html>
