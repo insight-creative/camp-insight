@@ -1,0 +1,12 @@
+.main-image {
+  position: relative;
+}
+.clock {
+  display: block;
+  position: absolute;
+  top: 400px;
+  left: 0;
+  right: 0;
+  width: 500px;
+  margin: 0 auto;
+}
