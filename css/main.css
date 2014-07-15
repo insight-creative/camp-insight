@@ -5,30 +5,61 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: #fff;
+  color: #0c0d11;
+  font-family: serif;
 }
 
 .body-copy {
-  background-color: #0c0d11;
+  background-color: #f3ede5;
+  opacity: .9;
   padding: 10px;
   margin-left: -15px;
   margin-right: -15px;
   text-align: center;
 }
 
-a {
+a.jim {
+  color: #0c0d11;
+}
+a:hover.jim {
+  color: #0c0d11;
+  opacity: .7;
+}
+a.social {
   color: #fff;
+  font-size: 20px;
 }
-a:hover {
-  color: #dfdfdf;
+a:hover.social {
+  color: #fff;
+  opacity: .7;
+  font-size: 20px;
 }
+
 h1 {
   font-family: 'homestead';
   font-size: 60px;
 }
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 35px;
+  margin-bottom: -12px;
+}
+
 h4 {
-  font-size: 21px;
+  font-size: 40px;
   margin-top: -10px;
+}
+h5 {
+  font-size: 28px;
+}
+
+hr {
+  color: #0c0d11;
+  background-color: #0c0d11;
+  height: 1px;
 }
 
 .container {
@@ -74,9 +105,20 @@ h4 {
 }
 }
 
+.rsvp {
+  width: 480px;
+  margin: auto;
+}
+
+.copyright {
+  padding-top: 10px;
+  opacity: .6;
+}
+
 footer {
+  color: #fff;
   text-align: center;
-  opacity: .3;
+  padding-top: 10px;
 }
 
 @font-face {
